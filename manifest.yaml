@@ -1,18 +1,17 @@
-name: example
-display_name: Example
-description: Import files from local filesystem
-homepage: https://github.com/tracepanic/plakar-integration
+name: b2
+display_name: Blackblaze Cloud Storage Buckets
+description:  Integration providing storage to Blackblaze Cloud Storage Buckets.
+#homepage: https://github.com/tracepanic/plakar-integration
 license: ISC
 connectors:
-  - type: importer
-    executable: ./example-importer
-    protocols: [example]
-    flags: [localfs]
-  - type: exporter
-    executable: ./example-exporter
-    protocols: [example]
-    flags: [localfs]
+#  - type: importer
+#    executable: ./example-importer
+#    protocols: [example]
+#    flags: [localfs]
+#  - type: exporter
+#    executable: ./example-exporter
+#    protocols: [example]
+#    flags: [localfs]
   - type: storage
-    executable: ./example-storage
-    protocols: [example]
-    flags: [localfs]
+    executable: ./b2-storage
+    protocols: [b2]

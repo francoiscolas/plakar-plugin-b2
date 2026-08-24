@@ -1,7 +1,7 @@
 package main
 
 import (
-	connectors "francoiscolas-plakar-b2"
+	connectors "github.com/francoiscolas/plakar-plugin-b2"
 
 	"os"
 

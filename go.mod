@@ -1,4 +1,4 @@
-module francoiscolas-plakar-b2
+module github.com/francoiscolas/plakar-plugin-b2
 
 go 1.25.7
 

@@ -1,6 +1,6 @@
 name: b2
-display_name: Blackblaze Cloud Storage Buckets
-description:  Integration providing storage to Blackblaze Cloud Storage Buckets.
+display_name: Backblaze Cloud Storage Buckets
+description:  Integration providing storage to Backblaze Cloud Storage Buckets.
 #homepage: https://github.com/tracepanic/plakar-integration
 license: ISC
 connectors:

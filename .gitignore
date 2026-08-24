@@ -2,3 +2,4 @@ b2-exporter
 b2-importer
 b2-storage
 b2_*.ptar
+.env

@@ -54,7 +54,6 @@ func (e *b2Store) Ping(ctx context.Context) error {
 }
 
 func (e *b2Store) Mode(context.Context) (storage.Mode, error) {
-	// TODO Not based on keyId/app/Key rights.
 	return storage.ModeRead | storage.ModeWrite, nil
 }
 
@@ -104,7 +103,7 @@ func (e *b2Store) List(ctx context.Context, res storage.StorageResource) (ret []
 	}
 
 	prefix = e.realpath(prefix)
-	l := len(prefix) + 4 // Correspond au préfixe + "/XX/" (les dossiers intermédiaires)
+	l := len(prefix) + 4
 
 	iterator := e.bucket.List(ctx, b2.ListPrefix(prefix))
 	for iterator.Next() {
@@ -112,7 +111,7 @@ func (e *b2Store) List(ctx context.Context, res storage.StorageResource) (ret []
 		name := obj.Name()
 
 		if len(name) <= l {
-			continue // Ignore les objets mal formés ou trop courts
+			continue
 		}
 
 		t, err := hex.DecodeString(name[l:])

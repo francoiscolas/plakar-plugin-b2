@@ -1,4 +1,4 @@
-module github.com/PlakarKorp/integrations/example
+module francoiscolas-plakar-b2
 
 go 1.25.7
 
@@ -8,6 +8,7 @@ require (
 )
 
 require (
+	github.com/Backblaze/blazer v0.7.2 // indirect
 	github.com/PlakarKorp/go-cdc-chunkers v1.0.3 // indirect
 	github.com/PlakarKorp/integration-grpc v1.1.0 // indirect
 	github.com/cockroachdb/crlib v0.0.0-20250718215705-7ff5051265b9 // indirect

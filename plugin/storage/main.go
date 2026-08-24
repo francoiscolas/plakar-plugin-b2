@@ -1,12 +1,13 @@
 package main
 
 import (
+	connectors "francoiscolas-plakar-b2"
+
 	"os"
 
 	sdk "github.com/PlakarKorp/go-kloset-sdk"
-	connector "github.com/PlakarKorp/integrations/example"
 )
 
 func main() {
-	sdk.EntrypointStorage(os.Args, connector.NewStore)
+	sdk.EntrypointStorage(os.Args, connectors.NewStore)
 }

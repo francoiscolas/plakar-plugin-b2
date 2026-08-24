@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Plakar Backblaze B2 Connector Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "location"
+  ],
+  "properties": {
+    "location": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Backblaze B2 location URI: b2://<bucket-name>/<optional-prefix>",
+      "pattern": "^b2://[^/]+(/.*)?$"
+    },
+    "key_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Backblaze B2 Application Key ID"
+    },
+    "app_key": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Backblaze B2 Application Key"
+    }
+  },
+  "oneOf": [
+    {
+      "description": "Explicit credentials provided in the configuration",
+      "required": [
+        "location",
+        "key_id",
+        "app_key"
+      ]
+    },
+    {
+      "description": "No credentials in config (expects environment variables to be set)",
+      "required": [
+        "location"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": ["key_id"]
+          },
+          {
+            "required": ["app_key"]
+          }
+        ]
+      }
+    }
+  ]
+}

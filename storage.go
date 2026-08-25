@@ -50,7 +50,16 @@ func (e *b2Store) Type() string   { return "b2" }
 func (e *b2Store) Flags() location.Flags { return 0 }
 
 func (e *b2Store) Ping(ctx context.Context) error {
-	return nil
+	if err := e.connect(ctx); err != nil {
+		return err
+	}
+
+	it := e.bucket.List(ctx)
+	if it.Next() {
+		return nil
+	}
+
+	return it.Err()
 }
 
 func (e *b2Store) Mode(context.Context) (storage.Mode, error) {
